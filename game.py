@@ -60,12 +60,12 @@ class App:
             self.supprimer_tours_apres = a_sup.copy()
     def event(self):
         if not self.menu:
-            if pyxel.btnp(pyxel.KEY_LEFT):
+            if pyxel.btnp(pyxel.KEY_LEFT) or pyxel.btnp(pyxel.GAMEPAD1_BUTTON_DPAD_LEFT):
                 self.player.move(-1)
-            if pyxel.btnp(pyxel.KEY_RIGHT):
+            if pyxel.btnp(pyxel.KEY_RIGHT) or pyxel.btnp(pyxel.GAMEPAD1_BUTTON_DPAD_RIGHT):
                 self.player.move(1)
         else:
-            if pyxel.btnp(pyxel.KEY_SPACE):
+            if pyxel.btnp(pyxel.KEY_SPACE) or pyxel.btnp(pyxel.GAMEPAD1_BUTTON_Y)or pyxel.btnp(pyxel.GAMEPAD1_BUTTON_X) or pyxel.btnp(pyxel.GAMEPAD1_BUTTON_A) or pyxel.btnp(pyxel.GAMEPAD1_BUTTON_B):
                 self.menu = False
                 self.scorre = 0
                 self.vie = 3
